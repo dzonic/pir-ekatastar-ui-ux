@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="sr">
+<script>
+
+    function StopWatch() {
+        let startTime, endTime, running, duration = 0
+        
+        this.start = () => {
+            if (running) console.log('Pokrenuto je!')
+            else {
+                running = true
+                startTime = Date.now()
+            }
+        }
+    
+        this.stop = () => {
+            if (!running) console.log('Nije pokrenuto!')
+            else {
+                running = false
+                endTime = Date.now()
+    
+                const seconds = (endTime - startTime) / 1000
+                duration += seconds
+            }
+        }
+    
+        this.restart = () => {
+            startTime = endTime = null
+            running = false
+            duration = 0
+        }
+        
+        Object.defineProperty(this, 'duration', {
+            get: () => duration.toFixed(2)
+        })
+    
+    }
+    var brojac=1;
+    var greske=0;
+    function setAction(action) {
+       
+      if (action == brojac) {
+        
+        console.log("Ispravno polje");
+        if (brojac>=12){
+            //stopiraj vreme ispisi ga 
+            sw.stop()
+            alert("Uspešno ste testirali, vreme koje vam je bilo potrebno: "+sw.duration + "s"+ "; Greške: "+ greske );
+            console.log("Uspešno ste testirali, vreme koje vam je bilo potrebno: "+sw.duration);
+            
+            console.log("Greške: "+ greske);
+    
+      }
+       brojac++;
+      }
+    
+      else if (brojac==12){
+            //stopiraj vreme ispisi ga 
+            sw.stop()
+            greske++;
+            alert("Uspešno ste testirali, vreme koje vam je bilo potrebno: "+sw.duration + "s"+ "; Greške: "+ greske );
+            console.log("Uspešno ste testirali, vreme koje vam je bilo potrebno: "+sw.duration);
+            console.log("Greške: "+ greske);
+            brojac++;
+    
+      }
+    else{
+        greske++;
+        brojac++;    
+    }
+    }
+        </script>
+<head>
+    <title>
+        еКатастар непокретности: Подаци о непокретности
+    </title>
+    <link media="screen" href="C:/Users/Admin/Desktop/PIR/RgzStyles.css" type="text/css" rel="stylesheet" />
+    <link media="print" href="C:/Users/Admin/Desktop/PIR/RgzPrintStyles.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+<script>
+
+  const sw =  new StopWatch()
+  sw.start()
+
+</script>
+    </div>
+
+    <div class="aspNetHidden">
+
+        <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="35B3F8E7" />
+    </div>
+    <div style="margin-left: 10px; margin-right: 10px; margin-top:10px; margin-bottom:10px;">
+
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td class="print_logo">
+                    <img id="ucHeaderPrint_Image1" src="C:/Users/Admin/Desktop/PIR/grb_srbije.png"
+                        alt="Грб Републике Србије" style="height:99px;width:50px;" />
+                </td>
+                <td class="print_heading">
+                    <div>Република Србија</div>
+                    <div>Републички геодетски завод</div>
+                    <div>Геодетско-катастарски информациони систем</div>
+                </td>
+            </tr>
+        </table>
+        <style>
+            .print_logo {
+                width: 100px;
+                height: 115px;
+                text-align: center;
+                vertical-align: top;
+            }
+
+            .print_heading {
+                vertical-align: middle;
+                text-align: left;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-weight: bold;
+                font-size: 16px;
+                line-height: 20px;
+                color: #29325b;
+            }
+        </style>
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td style="border-bottom: #9A9A9A 1px dotted;"></td>
+            </tr>
+        </table>
+        <tr>
+        </tr>
+        <tr>
+        </tr>
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td style="border-bottom: #9A9A9A 1px dotted;"></td>
+            </tr>
+        </table>
+        <p class="head">Подаци катастра непокретности</p>
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+            <tr>
+                <td class="print_form_item_h" style="width: 40%">
+                    Подаци о непокретности
+                </td>
+                <td class="print_form_item_h" style="width: 60%">
+                </td>
+
+            </tr>
+            <tr>
+
+            </tr>
+            <tr>
+                <td class="print_form_item_v" style="width:40%">
+                    <strong>Матични број општине:</strong>&nbsp;
+                </td>
+                <td class="print_form_item_v" style="width:60%">
+                    <button type="button" onclick="setAction(4)">89010</button>
+                </td>
+
+            </tr>
+            <tr>
+                <td class="print_form_item_v" style="width:40%">
+                    <strong>Општина:</strong>&nbsp;
+                </td>
+                <td class="print_form_item_v" style="width:60%">
+                    <button type="button" onclick="setAction(3)">НОВИ САД</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="print_form_item_v" style="width:40%">
+                    <strong>Матични број катастарске општине:</strong>&nbsp;
+                </td>
+                <td class="print_form_item_v" style="width:60%">
+                    <button type="button" onclick="setAction('search')">802166</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="print_form_item_v" style="width:40%">
+                    <strong>Катастарска општина:</strong>&nbsp;
+                </td>
+                <td class="print_form_item_v" style="width:60%">
+                    <button type="button" onclick="setAction(5)">НОВИ САД II</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="print_form_item_v" style="width:40%">
+                    <strong>Датум ажурности:</strong>&nbsp;
+                </td>
+                <td class="print_form_item_v" style="width:60%">
+                    <button type="button" onclick="setAction(2)">23.03.2021. 15:04</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="print_form_item_v" style="width:40%">
+                    <strong>Служба:</strong>&nbsp;
+                </td>
+                <td class="print_form_item_v" style="width:60%">
+                    <button type="button" onclick="setAction(1)">НОВИ САД 1 </button>
+                </td>
+            </tr>
+            <tr>
+            </tr>
+        </table>
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+            <tr>
+                <td class="print_form_item_h" colspan="2">
+                    1. Подаци о парцели - А лист</td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+                <td class="print_form_item_v" style="width:40%">
+                    <strong>Потес / Улица:</strong>&nbsp;
+                </td>
+                <td class="print_form_item_v" style="width:60%">
+                    <button type="button" onclick="setAction(7)">БУЛЕВАР ДЕСПОТА СТЕФАНА</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="print_form_item_v" style="width:40%">
+                    <strong>Број парцеле:</strong>&nbsp;
+                </td>
+                <td class="print_form_item_v" style="width:60%">
+                    <button type="button" onclick="setAction(6)">7333</buttontype="button" onclick="setAction('search')">
+                </td>
+
+            </tr>
+            <tr>
+                <td class="print_form_item_v" style="width:40%">
+                    <strong>Подброј парцеле:</strong>&nbsp;
+                </td>
+                <td class="print_form_item_v" style="width:60%">
+                    <button type="button" onclick="setAction('search')">6</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="print_form_item_v" style="width:40%">
+                    <strong>Површина m²:</strong>&nbsp;
+                </td>
+                <td class="print_form_item_v" style="width:60%">
+                    <button type="button" onclick="setAction('search')">1845</button>
+                </td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+                <td class="print_form_item_v" style="width:40%">
+                    <strong>Број листа непокретности:</strong>&nbsp;
+                </td>
+                <td class="print_form_item_v" style="width:60%">
+                    <button type="button" onclick="setAction('search')">10275</button>
+                </td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+            </tr>
+        </table>
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+            <tr>
+                <td class="print_form_item_h">
+                    Подаци о делу парцеле
+                </td>
+                <td class="print_form_item_h" align="right">
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td class="print_form_item_v" style="width:40%">
+                    <strong>Број дела:</strong>&nbsp;
+                </td>
+                <td class="print_form_item_v" style="width:60%">
+                    <button type="button" onclick="setAction('search')">1</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="print_form_item_v" style="width:40%">
+                    <strong>Врста земљишта:</strong>&nbsp;
+                </td>
+                <td class="print_form_item_v" style="width:60%">
+                    <button type="button" onclick="setAction('search')">ГРАДСКО ГРАЂЕВИНСКО ЗЕМЉИШТЕ</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="print_form_item_v" style="width:40%">
+                    <strong>Култура:</strong>&nbsp;
+                </td>
+                <td class="print_form_item_v" style="width:60%">
+                    <button type="button" onclick="setAction('search')">ЗЕМЉИШТЕ ПОД ЗГРАДОМ И ДРУГИМ ОБЈЕКТОМ</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="print_form_item_v" style="width:40%">
+                    <strong>Површина m²:</strong>&nbsp;
+                </td>
+                <td class="print_form_item_v" style="width:60%">
+                    <button type="button" onclick="setAction('search')">1845</button>
+                </td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+            </tr>
+        </table>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td class="print_form_item_h2">
+                    Имаоци права на парцели - Б лист
+                </td>
+                <td class="print_form_item_h2" align="right">
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td>
+            <tr>
+                <td class="print_form_item_v" style="width: 40%" id="ImaocPrava">
+                    <strong>
+
+                        Назив: </strong>
+                </td>
+                <td class="print_form_item_v" style="width: 60%">
+                    <button type="button" onclick="setAction('search')">АУТОНОМНА ПОКРАЈИНА ВОЈВОДИНА</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="print_form_item_v">
+                    <strong>
+
+                        Врста права:
+                    </strong>
+                </td>
+                <td class="print_form_item_v">
+                    <button type="button" onclick="setAction('search')">СВОЈИНА</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="print_form_item_v">
+                    <strong>
+                        Облик својине:
+                    </strong>
+                </td>
+                <td class="print_form_item_v">
+                    <button type="button" onclick="setAction('search')">ЈАВНА СВОЈИНА</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="print_form_item_v">
+                    <strong>
+
+                        Удео: </strong>
+                </td>
+                <td class="print_form_item_v">
+                    <button type="button" onclick="setAction('search')">1/1</button>
+                </td>
+            </tr>
+        </table>
+        <!-- Tereti i zabeležbe -->
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+            <tr>
+                <td class="print_form_item_h">
+                    <span id="getTeretiNaParceli_lblCaption">Терети на парцели - Г лист</span>
+                </td>
+                <td class="print_form_item_h" align="right">
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+        <p class="body_text">
+            <span id="getTeretiNaParceli_lbInfo"><button type="button" onclick="setAction('search')">*** Нема терета ***</button></span></p>
+        <i></i>
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+            <tr>
+                <td class="print_form_item_h">
+                    Забележба парцеле
+                </td>
+                <td class="print_form_item_h" align="right">
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+        <p class="body_text">
+            <span id="getNapomenaNaParceli_lbInfo"><button type="button" onclick="setAction('search')">*** Нема забележбе ***</button></span></p>
+
+        <table cellspacing="0" cellpadding="0" width="100%" border="0" id="Table2">
+            <tr>
+                <td class="print_form_item_h" colspan="2">
+                    2. Подаци о зградама и другим грађевинским објектима - В1 лист
+                </td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+                <td class="print_form_item_v" style="width:40%">
+                    <strong>Број објекта:</strong>&nbsp;
+                </td>
+                <td class="print_form_item_v" style="width:60%">
+                    <button type="button" onclick="setAction(12)">1</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="print_form_item_v" style="width:40%">
+                    <strong>Назив улице:</strong>&nbsp;
+                </td>
+                <td class="print_form_item_v" style="width:60%">
+                    <button type="button" onclick="setAction(9)">БУЛЕВАР ДЕСПОТА СТЕФАНА</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="print_form_item_v" style="width:40%">
+                    <strong>Кућни број:</strong>&nbsp;
+                </td>
+                <td class="print_form_item_v" style="width:60%">
+                    <button type="button" onclick="setAction(8)">7</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="print_form_item_v" style="width:40%">
+                    <strong>Кућни подброј:</strong>&nbsp;
+                </td>
+                <td class="print_form_item_v" style="width:60%">
+
+                </td>
+            </tr>
+            <tr>
+                <td class="print_form_item_v" style="width:40%">
+                    <strong>Површина m²:</strong>&nbsp;
+                </td>
+                <td class="print_form_item_v" style="width:60%">
+                    <button type="button" onclick="setAction('search')">1845</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="print_form_item_v" style="width:40%">
+                    <strong>Корисна површина m²:</strong>&nbsp;
+                </td>
+                <td class="print_form_item_v" style="width:60%">
+                    <button type="button" onclick="setAction('search')">0</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="print_form_item_v" style="width:40%">
+                    <strong>Грађевинска површина m²:</strong>&nbsp;
+                </td>
+                <td class="print_form_item_v" style="width:60%">
+                    <button type="button" onclick="setAction('search')">0</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="print_form_item_v" style="width:40%">
+                    <strong>Начин коришћења и назив објекта:</strong>&nbsp;
+                </td>
+                <td class="print_form_item_v" style="width:60%">
+                    <button type="button" onclick="setAction(10)">СТУДЕНТСКИ ДОМ</button></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="print_form_item_v" style="width:40%">
+                    <strong>Правни статус објекта:</strong>&nbsp;
+                </td>
+                <td class="print_form_item_v" style="width:60%">
+                    <button type="button" onclick="setAction(11)">ОБЈЕКАТ ИМА ОДОБРЕЊЕ ЗА УПОТРЕБУ</button>
+                </td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+
+            </tr>
+        </table>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td class="print_form_item_h2">
+                    Имаоци права на објекту
+                </td>
+                <td class="print_form_item_h2" align="right">
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+            <tr>
+                <td>
+            <tr>
+                <td class="print_form_item_v" style="width: 40%" id="ImaocPrava">
+                    <strong>
+
+                        Назив: </strong>
+                </td>
+                <td class="print_form_item_v" style="width: 60%">
+                    <button type="button" onclick="setAction('search')">АУТОНОМНА ПОКРАЈИНА ВОЈВОДИНА</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="print_form_item_v">
+                    <strong>
+
+                        Врста права:
+                    </strong>
+                </td>
+                <td class="print_form_item_v">
+                    <button type="button" onclick="setAction('search')">СВОЈИНА</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="print_form_item_v">
+                    <strong>
+
+                        Облик својине:
+                    </strong>
+                </td>
+                <td class="print_form_item_v">
+                    <button type="button" onclick="setAction('search')">ЈАВНА СВОЈИНА</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="print_form_item_v">
+                    <strong>
+
+                        Удео: </strong>
+                </td>
+                <td class="print_form_item_v">
+                    <button type="button" onclick="setAction('search')">1/1</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+            <tr>
+                <td class="print_form_item_v" style="width: 40%" id="ImaocPrava">
+                    <strong>
+
+                        Назив: </strong>
+                </td>
+                <td class="print_form_item_v" style="width: 60%">
+                    <button type="button" onclick="setAction('search')"> УСТАНОВА СТУДЕНТСКИ ЦЕНТАР НОВИ САД </button>
+                </td>
+            </tr>
+            <tr>
+                <td class="print_form_item_v">
+                    <strong>
+
+                        Врста права:
+                    </strong>
+                </td>
+                <td class="print_form_item_v">
+                    <button type="button" onclick="setAction('search')">ПРАВО КОРИШЋЕЊА</button>
+                </td>
+            </tr>
+            <tr>
+                <td class="print_form_item_v">
+                    <strong>
+
+                        Облик својине:
+                    </strong>
+                </td>
+                <td class="print_form_item_v">
+
+                </td>
+            </tr>
+            <tr>
+                <td class="print_form_item_v">
+                    <strong>
+
+                        Удео: </strong>
+                </td>
+                <td class="print_form_item_v">
+                    <button type="button" onclick="setAction('search')"> 1/1 </button>
+                </td>
+            </tr>
+        </table>
+        <!-- Tereti, zabeležbe, IsResenjeNijeKonacno -->
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+            <tr>
+                <td class="print_form_item_h">
+                    <span id="getTeretiNaObjetu_lblCaption">Терети на објекту - Г лист</span>
+                </td>
+                <td class="print_form_item_h" align="right">
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+        <p class="body_text">
+            <button type="button" onclick="setAction('search')">*** Нема терета ***</button></p>
+        <i></i>
+        <table cellspacing="0" cellpadding="0" width="100%" border="0">
+            <tr>
+                <td class="print_form_item_h">
+                    Забележба објекта
+                </td>
+                <td class="print_form_item_h" align="right">
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+
+        <p class="body_text">
+            <button type="button" onclick="setAction('search')">*** Нема забележбе ***</button></p>
+        <!-- Tereti i zabeležbe -->
+    </div>
+    </form>
+</body>
+</html>
